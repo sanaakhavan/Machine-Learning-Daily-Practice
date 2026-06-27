@@ -27,11 +27,13 @@ impute_embarked = SimpleImputer(
 x_train[:, 6:7] = impute_embarked.fit_transform(x_train[:, 6:7])
 x_test[:, 6:7] = impute_embarked.transform(x_test[:, 6:7])
 
+# One-hot encode categorical features (Sex and Embarked)
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(
     handle_unknown='ignore'), [1, 6])], remainder='passthrough')
 x_train = ct.fit_transform(x_train)
 x_test = ct.transform(x_test)
 
+# Scale numerical features
 sc = StandardScaler()
 x_train[:, 5:] = sc.fit_transform(x_train[:, 5:])
 x_test[:, 5:] = sc.transform(x_test[:, 5:])
