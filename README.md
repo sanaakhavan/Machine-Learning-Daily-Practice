@@ -11,6 +11,11 @@ The goal of this repository is to build a strong foundation in Data Preprocessin
 - Imputed categorical missing data using the `most_frequent` strategy.
 - Practiced proper array reshaping and single-column fit-transform operations.
 
+### Day 2: Preprocessing & Data Leakage Prevention (Titanic Dataset)
+- Learned how to prevent **Data Leakage** by splitting the dataset (`train_test_split`) *before* applying any transformations.
+- Applied `SimpleImputer` (`mean` for Age, `most_frequent` for Embarked) correctly on train and test sets (`fit_transform` on train, only `transform` on test).
+- Used `StandardScaler` to scale numerical features.
+
 *(More exercises will be added here as I progress!)*
 
 ## Tools & Libraries Used
